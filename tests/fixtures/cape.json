@@ -1,0 +1,12 @@
+{
+  "format": "cape",
+  "info": {"version": "synthetic-cape", "started": "2026-01-01T12:00:00Z"},
+  "target": {"file": {"name": "synthetic.exe", "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}},
+  "CAPE": {"detections": ["Synthetic.Family"]},
+  "behavior": {
+    "processes": [{"process_id": 100, "parent_id": 50, "parent_name": "winword.exe", "process_name": "powershell.exe", "command_line": "powershell.exe -NoProfile Write-Output synthetic", "first_seen": "2026-01-01T12:00:01"}],
+    "summary": {"regkey_written": ["HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Synthetic"], "file_created": ["C:\\Users\\Analyst\\AppData\\Local\\Temp\\synthetic.ps1"], "mutex": ["SyntheticMutex"]}
+  },
+  "network": {"dns": [{"domain": "Example.ORG.", "answers": [{"ip": "192.0.2.10"}]}], "http": [{"uri": "https://example.org/demo", "method": "GET"}], "tcp": [{"dst": "192.0.2.10", "dport": 443}]},
+  "signatures": [{"name": "synthetic_autorun", "description": "Synthetic Run key activity", "ttps": ["T1547.001"]}]
+}

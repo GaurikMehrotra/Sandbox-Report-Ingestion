@@ -1,0 +1,149 @@
+{
+  "cape.json": {
+    "source": "cape",
+    "iocs": [
+      [
+        "domain",
+        "example.org"
+      ],
+      [
+        "ip",
+        "192.0.2.10"
+      ],
+      [
+        "url",
+        "https://example.org/demo"
+      ],
+      [
+        "sha256",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "filename",
+        "synthetic.exe"
+      ],
+      [
+        "process_name",
+        "powershell.exe"
+      ],
+      [
+        "registry_path",
+        "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Synthetic"
+      ],
+      [
+        "file_path",
+        "C:\\Users\\Analyst\\AppData\\Local\\Temp\\synthetic.ps1"
+      ],
+      [
+        "mutex",
+        "SyntheticMutex"
+      ]
+    ],
+    "attack": [
+      "T1547.001",
+      "T1059.001"
+    ],
+    "evidence_count": 11,
+    "fields": [
+      {
+        "reference": "/target/file",
+        "field": "sha256",
+        "expected": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "reference": "/behavior/processes/0",
+        "field": "process_id",
+        "expected": "100"
+      },
+      {
+        "reference": "/behavior/summary/regkey_written/0",
+        "field": "operation",
+        "expected": "regkey_written"
+      },
+      {
+        "reference": "/network/dns/0",
+        "field": "domain",
+        "expected": "example.org"
+      }
+    ]
+  },
+  "cuckoo.json": {
+    "source": "cuckoo",
+    "iocs": [
+      [
+        "filename",
+        "second.exe"
+      ],
+      [
+        "md5",
+        "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      ],
+      [
+        "process_name",
+        "second.exe"
+      ],
+      [
+        "file_path",
+        "C:\\Temp\\second.txt"
+      ],
+      [
+        "domain",
+        "example.org"
+      ],
+      [
+        "ip",
+        "2001:db8::1"
+      ]
+    ],
+    "attack": [],
+    "evidence_count": 6,
+    "fields": [
+      {
+        "reference": "/target/file",
+        "field": "md5",
+        "expected": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "reference": "/behavior/processes/0",
+        "field": "process_id",
+        "expected": "200"
+      },
+      {
+        "reference": "/network/hosts/0",
+        "field": "ip",
+        "expected": "2001:db8::1"
+      }
+    ]
+  },
+  "synthetic.json": {
+    "source": "synthetic",
+    "iocs": [
+      [
+        "domain",
+        "example.org"
+      ],
+      [
+        "ip",
+        "127.0.0.1"
+      ],
+      [
+        "file_path",
+        "C:\\Temp\\synthetic.txt"
+      ]
+    ],
+    "attack": [],
+    "evidence_count": 4,
+    "fields": [
+      {
+        "reference": "/observations/0/value",
+        "field": "domain",
+        "expected": "example.org"
+      },
+      {
+        "reference": "/observations/2/value",
+        "field": "ip",
+        "expected": "127.0.0.1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "synthetic": true,
+  "events": 5000,
+  "input_bytes": 308934,
+  "seconds": 1.852218591999872,
+  "python_peak_bytes": 41368684,
+  "status": "saved",
+  "evidence_count": 5000,
+  "ioc_count": 5000
+}

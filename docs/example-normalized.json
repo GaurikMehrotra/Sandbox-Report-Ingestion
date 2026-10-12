@@ -1,0 +1,644 @@
+{
+  "schema_version": "1.0",
+  "report_id": "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e",
+  "ingestion_id": "e3bc3cfb-80e4-4b22-ae1e-ec7988ae71e5",
+  "ingested_at": "2026-10-12T17:13:34.706266+00:00",
+  "original_sha256": "32e8f1e09b4e7ef017310352d3735b918340270c727b2b23a9e28ff32e51bc05",
+  "source_sandbox": "cape",
+  "sandbox_version": "synthetic-cape",
+  "analysis_started_at": "2026-01-01T12:00:00+00:00",
+  "analysis_ended_at": null,
+  "observations": {
+    "metadata": [
+      "183f110c9c70c826eba13255"
+    ],
+    "sample": [
+      "5b93d170661633b1946888b9"
+    ],
+    "process": [
+      "71cc6cea8030d9fc92cd5675"
+    ],
+    "registry": [
+      "d8ab112eb1e7d93fe71ce51b"
+    ],
+    "file": [
+      "086249c0a4c02e6316b5d89a"
+    ],
+    "mutex": [
+      "8ab4816adab7944b4f54f690"
+    ],
+    "network": [
+      "4c360397435e911832842b3c"
+    ],
+    "dns": [
+      "9046f2169cf401f51e6199b4"
+    ],
+    "http": [
+      "7949667346f5fa6c00f158d8"
+    ],
+    "signature": [
+      "5c71448055aed9c703b9be0f"
+    ],
+    "sandbox_detection": [
+      "ec8429fa226a6fa5cb3e5ce3"
+    ]
+  },
+  "parser_version": "1.0",
+  "sample": {
+    "name": "synthetic.exe",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "evidence": [
+    {
+      "evidence_id": "183f110c9c70c826eba13255",
+      "report_id": "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e",
+      "source_sandbox": "cape",
+      "evidence_type": "metadata",
+      "description": "Source metadata observation",
+      "raw_value": {
+        "version": "synthetic-cape",
+        "started": "2026-01-01T12:00:00Z"
+      },
+      "normalized_value": {
+        "version": "synthetic-cape",
+        "started": "2026-01-01T12:00:00Z"
+      },
+      "source_reference": "/info",
+      "timestamp": null,
+      "confidence": null,
+      "normalization_version": "1.0"
+    },
+    {
+      "evidence_id": "5b93d170661633b1946888b9",
+      "report_id": "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e",
+      "source_sandbox": "cape",
+      "evidence_type": "sample",
+      "description": "Source sample observation",
+      "raw_value": {
+        "name": "synthetic.exe",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "normalized_value": {
+        "name": "synthetic.exe",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "source_reference": "/target/file",
+      "timestamp": null,
+      "confidence": null,
+      "normalization_version": "1.0"
+    },
+    {
+      "evidence_id": "71cc6cea8030d9fc92cd5675",
+      "report_id": "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e",
+      "source_sandbox": "cape",
+      "evidence_type": "process",
+      "description": "Source process observation",
+      "raw_value": {
+        "process_id": 100,
+        "parent_id": 50,
+        "parent_name": "winword.exe",
+        "process_name": "powershell.exe",
+        "command_line": "powershell.exe -NoProfile Write-Output synthetic",
+        "first_seen": "2026-01-01T12:00:01"
+      },
+      "normalized_value": {
+        "process_id": "100",
+        "parent_id": "50",
+        "parent_name": "winword.exe",
+        "process_name": "powershell.exe",
+        "command_line": "powershell.exe -NoProfile Write-Output synthetic",
+        "first_seen": "2026-01-01T12:00:01"
+      },
+      "source_reference": "/behavior/processes/0",
+      "timestamp": "2026-01-01T12:00:01+00:00",
+      "confidence": null,
+      "normalization_version": "1.0"
+    },
+    {
+      "evidence_id": "d8ab112eb1e7d93fe71ce51b",
+      "report_id": "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e",
+      "source_sandbox": "cape",
+      "evidence_type": "registry",
+      "description": "Source registry observation",
+      "raw_value": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Synthetic",
+      "normalized_value": {
+        "operation": "regkey_written",
+        "path": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Synthetic"
+      },
+      "source_reference": "/behavior/summary/regkey_written/0",
+      "timestamp": null,
+      "confidence": null,
+      "normalization_version": "1.0"
+    },
+    {
+      "evidence_id": "086249c0a4c02e6316b5d89a",
+      "report_id": "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e",
+      "source_sandbox": "cape",
+      "evidence_type": "file",
+      "description": "Source file observation",
+      "raw_value": "C:\\Users\\Analyst\\AppData\\Local\\Temp\\synthetic.ps1",
+      "normalized_value": {
+        "operation": "file_created",
+        "path": "C:\\Users\\Analyst\\AppData\\Local\\Temp\\synthetic.ps1"
+      },
+      "source_reference": "/behavior/summary/file_created/0",
+      "timestamp": null,
+      "confidence": null,
+      "normalization_version": "1.0"
+    },
+    {
+      "evidence_id": "8ab4816adab7944b4f54f690",
+      "report_id": "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e",
+      "source_sandbox": "cape",
+      "evidence_type": "mutex",
+      "description": "Source mutex observation",
+      "raw_value": "SyntheticMutex",
+      "normalized_value": "SyntheticMutex",
+      "source_reference": "/behavior/summary/mutex/0",
+      "timestamp": null,
+      "confidence": null,
+      "normalization_version": "1.0"
+    },
+    {
+      "evidence_id": "4c360397435e911832842b3c",
+      "report_id": "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e",
+      "source_sandbox": "cape",
+      "evidence_type": "network",
+      "description": "Source network observation",
+      "raw_value": {
+        "dst": "192.0.2.10",
+        "dport": 443
+      },
+      "normalized_value": {
+        "dst": "192.0.2.10",
+        "dport": 443
+      },
+      "source_reference": "/network/tcp/0",
+      "timestamp": null,
+      "confidence": null,
+      "normalization_version": "1.0"
+    },
+    {
+      "evidence_id": "9046f2169cf401f51e6199b4",
+      "report_id": "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e",
+      "source_sandbox": "cape",
+      "evidence_type": "dns",
+      "description": "Source dns observation",
+      "raw_value": {
+        "domain": "Example.ORG.",
+        "answers": [
+          {
+            "ip": "192.0.2.10"
+          }
+        ]
+      },
+      "normalized_value": {
+        "domain": "example.org",
+        "answers": [
+          {
+            "ip": "192.0.2.10"
+          }
+        ]
+      },
+      "source_reference": "/network/dns/0",
+      "timestamp": null,
+      "confidence": null,
+      "normalization_version": "1.0"
+    },
+    {
+      "evidence_id": "7949667346f5fa6c00f158d8",
+      "report_id": "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e",
+      "source_sandbox": "cape",
+      "evidence_type": "http",
+      "description": "Source http observation",
+      "raw_value": {
+        "uri": "https://example.org/demo",
+        "method": "GET"
+      },
+      "normalized_value": {
+        "uri": "https://example.org/demo",
+        "method": "GET"
+      },
+      "source_reference": "/network/http/0",
+      "timestamp": null,
+      "confidence": null,
+      "normalization_version": "1.0"
+    },
+    {
+      "evidence_id": "5c71448055aed9c703b9be0f",
+      "report_id": "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e",
+      "source_sandbox": "cape",
+      "evidence_type": "signature",
+      "description": "Source signature observation",
+      "raw_value": {
+        "name": "synthetic_autorun",
+        "description": "Synthetic Run key activity",
+        "ttps": [
+          "T1547.001"
+        ]
+      },
+      "normalized_value": {
+        "name": "synthetic_autorun",
+        "description": "Synthetic Run key activity",
+        "ttps": [
+          "T1547.001"
+        ]
+      },
+      "source_reference": "/signatures/0",
+      "timestamp": null,
+      "confidence": null,
+      "normalization_version": "1.0"
+    },
+    {
+      "evidence_id": "ec8429fa226a6fa5cb3e5ce3",
+      "report_id": "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e",
+      "source_sandbox": "cape",
+      "evidence_type": "sandbox_detection",
+      "description": "Source sandbox_detection observation",
+      "raw_value": {
+        "detections": [
+          "Synthetic.Family"
+        ]
+      },
+      "normalized_value": {
+        "detections": [
+          "Synthetic.Family"
+        ]
+      },
+      "source_reference": "/CAPE",
+      "timestamp": null,
+      "confidence": null,
+      "normalization_version": "1.0"
+    }
+  ],
+  "iocs": [
+    {
+      "type": "domain",
+      "value": "example.org",
+      "original_values": [
+        "Example.ORG."
+      ],
+      "evidence_ids": [
+        "9046f2169cf401f51e6199b4"
+      ],
+      "report_ids": [
+        "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e"
+      ],
+      "first_seen": null,
+      "last_seen": null,
+      "classification": "syntactically_valid",
+      "public_ip": null
+    },
+    {
+      "type": "file_path",
+      "value": "C:\\Users\\Analyst\\AppData\\Local\\Temp\\synthetic.ps1",
+      "original_values": [
+        "C:\\Users\\Analyst\\AppData\\Local\\Temp\\synthetic.ps1"
+      ],
+      "evidence_ids": [
+        "086249c0a4c02e6316b5d89a"
+      ],
+      "report_ids": [
+        "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e"
+      ],
+      "first_seen": null,
+      "last_seen": null,
+      "classification": "syntactically_valid",
+      "public_ip": null
+    },
+    {
+      "type": "filename",
+      "value": "synthetic.exe",
+      "original_values": [
+        "synthetic.exe"
+      ],
+      "evidence_ids": [
+        "5b93d170661633b1946888b9"
+      ],
+      "report_ids": [
+        "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e"
+      ],
+      "first_seen": null,
+      "last_seen": null,
+      "classification": "syntactically_valid",
+      "public_ip": null
+    },
+    {
+      "type": "ip",
+      "value": "192.0.2.10",
+      "original_values": [
+        "192.0.2.10"
+      ],
+      "evidence_ids": [
+        "4c360397435e911832842b3c",
+        "9046f2169cf401f51e6199b4"
+      ],
+      "report_ids": [
+        "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e"
+      ],
+      "first_seen": null,
+      "last_seen": null,
+      "classification": "syntactically_valid",
+      "public_ip": false
+    },
+    {
+      "type": "mutex",
+      "value": "SyntheticMutex",
+      "original_values": [
+        "SyntheticMutex"
+      ],
+      "evidence_ids": [
+        "8ab4816adab7944b4f54f690"
+      ],
+      "report_ids": [
+        "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e"
+      ],
+      "first_seen": null,
+      "last_seen": null,
+      "classification": "syntactically_valid",
+      "public_ip": null
+    },
+    {
+      "type": "process_name",
+      "value": "powershell.exe",
+      "original_values": [
+        "powershell.exe"
+      ],
+      "evidence_ids": [
+        "71cc6cea8030d9fc92cd5675"
+      ],
+      "report_ids": [
+        "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e"
+      ],
+      "first_seen": "2026-01-01T12:00:01+00:00",
+      "last_seen": "2026-01-01T12:00:01+00:00",
+      "classification": "syntactically_valid",
+      "public_ip": null
+    },
+    {
+      "type": "registry_path",
+      "value": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Synthetic",
+      "original_values": [
+        "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Synthetic"
+      ],
+      "evidence_ids": [
+        "d8ab112eb1e7d93fe71ce51b"
+      ],
+      "report_ids": [
+        "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e"
+      ],
+      "first_seen": null,
+      "last_seen": null,
+      "classification": "syntactically_valid",
+      "public_ip": null
+    },
+    {
+      "type": "sha256",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "original_values": [
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      "evidence_ids": [
+        "5b93d170661633b1946888b9"
+      ],
+      "report_ids": [
+        "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e"
+      ],
+      "first_seen": null,
+      "last_seen": null,
+      "classification": "syntactically_valid",
+      "public_ip": null
+    },
+    {
+      "type": "url",
+      "value": "https://example.org/demo",
+      "original_values": [
+        "https://example.org/demo"
+      ],
+      "evidence_ids": [
+        "7949667346f5fa6c00f158d8"
+      ],
+      "report_ids": [
+        "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e"
+      ],
+      "first_seen": null,
+      "last_seen": null,
+      "classification": "syntactically_valid",
+      "public_ip": null
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "child-71cc6cea8030d9fc92cd5675",
+      "kind": "deterministic_interpretation",
+      "rule_id": "office-shell-child-v1",
+      "description": "Office application reported spawning a command interpreter",
+      "rationale": "An explicit parent name and child process name support this investigative signal; legitimate automation is possible.",
+      "evidence_ids": [
+        "71cc6cea8030d9fc92cd5675"
+      ]
+    },
+    {
+      "finding_id": "run-d8ab112eb1e7d93fe71ce51b",
+      "kind": "deterministic_interpretation",
+      "rule_id": "run-key-write-v1",
+      "description": "Potential persistence-related registry modification",
+      "rationale": "Source reports modification of a Windows autostart Run key; value and execution require analyst verification.",
+      "evidence_ids": [
+        "d8ab112eb1e7d93fe71ce51b"
+      ]
+    },
+    {
+      "finding_id": "file-086249c0a4c02e6316b5d89a",
+      "kind": "deterministic_interpretation",
+      "rule_id": "noteworthy-file-creation-v1",
+      "description": "Executable or script reported written in a noteworthy location",
+      "rationale": "A creation/write summary and path extension support review; neither content nor execution is established.",
+      "evidence_ids": [
+        "086249c0a4c02e6316b5d89a"
+      ]
+    },
+    {
+      "finding_id": "source-5c71448055aed9c703b9be0f",
+      "kind": "source_detection",
+      "rule_id": "sandbox-label-v1",
+      "description": "Sandbox-reported detection",
+      "rationale": "Source label is retained; it is not independently verified ground truth.",
+      "evidence_ids": [
+        "5c71448055aed9c703b9be0f"
+      ]
+    },
+    {
+      "finding_id": "source-ec8429fa226a6fa5cb3e5ce3",
+      "kind": "source_detection",
+      "rule_id": "sandbox-label-v1",
+      "description": "Sandbox-reported detection",
+      "rationale": "Source label is retained; it is not independently verified ground truth.",
+      "evidence_ids": [
+        "ec8429fa226a6fa5cb3e5ce3"
+      ]
+    },
+    {
+      "finding_id": "repeat-4c360397435e911832842b3c-ip",
+      "kind": "deterministic_interpretation",
+      "rule_id": "repeated-network-indicator-v1",
+      "description": "Network indicator appears in multiple source records",
+      "rationale": "Repeated records may reflect retries or duplicated telemetry; not proof of distinct connections.",
+      "evidence_ids": [
+        "4c360397435e911832842b3c",
+        "9046f2169cf401f51e6199b4"
+      ]
+    }
+  ],
+  "attack": [
+    {
+      "technique_id": "T1059.001",
+      "name": "PowerShell",
+      "origin": "system_inferred",
+      "rationale": "Observed PowerShell process with a command line supports a candidate interpreter mapping, not malicious intent.",
+      "evidence_ids": [
+        "71cc6cea8030d9fc92cd5675"
+      ],
+      "catalog_version": "local-subset-2026-10",
+      "status": "candidate"
+    },
+    {
+      "technique_id": "T1547.001",
+      "name": "Registry Run Keys / Startup Folder",
+      "origin": "system_inferred",
+      "rationale": "Source reports modification of a Windows autostart Run key; value and execution require analyst verification.",
+      "evidence_ids": [
+        "d8ab112eb1e7d93fe71ce51b"
+      ],
+      "catalog_version": "local-subset-2026-10",
+      "status": "candidate"
+    },
+    {
+      "technique_id": "T1547.001",
+      "name": "Registry Run Keys / Startup Folder",
+      "origin": "source_reported",
+      "rationale": "Sandbox mapping retained; supporting behavior has not been independently established.",
+      "evidence_ids": [
+        "5c71448055aed9c703b9be0f"
+      ],
+      "catalog_version": "local-subset-2026-10",
+      "status": "unsupported_source_claim"
+    }
+  ],
+  "warnings": [
+    "naive timestamp assumed UTC; original retained"
+  ],
+  "stages": [
+    {
+      "name": "validation",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "format_detection",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "parsing",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "normalization",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "evidence_registration",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "ioc_extraction",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "behavior_analysis",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "attack_mapping",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "ai",
+      "status": "skipped",
+      "detail": "disabled by default"
+    },
+    {
+      "name": "storage",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "cross_report_correlation",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "report_generation",
+      "status": "passed",
+      "detail": null
+    }
+  ],
+  "correlations": {
+    "shared_iocs": [
+      {
+        "type": "domain",
+        "value": "example.org",
+        "reports": [
+          {
+            "report_id": "381d93b545171560ecdeda4dc8bb680a01bb8a1c093fe00e1bfcded2eb2f4e63",
+            "type": "domain",
+            "value": "example.org",
+            "evidence_ids": [
+              "6e7efa2dff63204460931e28",
+              "877784013c2efa2a39931e51"
+            ]
+          },
+          {
+            "report_id": "76c6109ffbfab829f7acca185c2225a0d9cfdd6d1290a993e643e0bc6424c90e",
+            "type": "domain",
+            "value": "example.org",
+            "evidence_ids": [
+              "9046f2169cf401f51e6199b4"
+            ]
+          },
+          {
+            "report_id": "a8cdabe7acbfdb466eee7211d9c297f0510708143505752100cd9c981b70b096",
+            "type": "domain",
+            "value": "example.org",
+            "evidence_ids": [
+              "c4f71153591e8803b144d731"
+            ]
+          }
+        ]
+      }
+    ],
+    "shared_behavior": [
+      {
+        "rule_id": "repeated-network-indicator-v1",
+        "report_id": "381d93b545171560ecdeda4dc8bb680a01bb8a1c093fe00e1bfcded2eb2f4e63",
+        "target_evidence": [
+          "4c360397435e911832842b3c",
+          "9046f2169cf401f51e6199b4"
+        ],
+        "other_evidence": [
+          "6e7efa2dff63204460931e28",
+          "877784013c2efa2a39931e51"
+        ],
+        "rationale": "Shared deterministic rule result; not a family attribution."
+      }
+    ]
+  },
+  "ai": null
+}

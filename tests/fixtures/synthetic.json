@@ -1,0 +1,1 @@
+{"format":"synthetic-v1","observations":[{"type":"dns","value":{"domain":"Example.ORG."}},{"type":"dns","value":{"domain":"example.org"}},{"type":"network","value":{"ip":"127.0.0.1"}},{"type":"file","value":{"path":"C:\\Temp\\synthetic.txt"}}]}

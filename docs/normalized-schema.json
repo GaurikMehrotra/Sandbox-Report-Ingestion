@@ -1,0 +1,467 @@
+{
+  "$defs": {
+    "AttackMapping": {
+      "additionalProperties": false,
+      "properties": {
+        "technique_id": {
+          "title": "Technique Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "source_reported",
+            "system_inferred"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "catalog_version": {
+          "default": "local-subset-2026-10",
+          "title": "Catalog Version",
+          "type": "string"
+        },
+        "status": {
+          "default": "candidate",
+          "enum": [
+            "candidate",
+            "unsupported_source_claim"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "technique_id",
+        "name",
+        "origin",
+        "rationale",
+        "evidence_ids"
+      ],
+      "title": "AttackMapping",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "report_id": {
+          "title": "Report Id",
+          "type": "string"
+        },
+        "source_sandbox": {
+          "title": "Source Sandbox",
+          "type": "string"
+        },
+        "evidence_type": {
+          "title": "Evidence Type",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "raw_value": {
+          "title": "Raw Value"
+        },
+        "normalized_value": {
+          "title": "Normalized Value"
+        },
+        "source_reference": {
+          "title": "Source Reference",
+          "type": "string"
+        },
+        "timestamp": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timestamp"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "normalization_version": {
+          "default": "1.0",
+          "title": "Normalization Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "report_id",
+        "source_sandbox",
+        "evidence_type",
+        "description",
+        "raw_value",
+        "normalized_value",
+        "source_reference"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "finding_id": {
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "deterministic_interpretation",
+            "source_detection"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "rule_id": {
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "finding_id",
+        "kind",
+        "rule_id",
+        "description",
+        "rationale",
+        "evidence_ids"
+      ],
+      "title": "Finding",
+      "type": "object"
+    },
+    "IOC": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "original_values": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Original Values",
+          "type": "array"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "report_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Report Ids",
+          "type": "array"
+        },
+        "first_seen": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "First Seen"
+        },
+        "last_seen": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Last Seen"
+        },
+        "classification": {
+          "const": "syntactically_valid",
+          "default": "syntactically_valid",
+          "title": "Classification",
+          "type": "string"
+        },
+        "public_ip": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Public Ip"
+        }
+      },
+      "required": [
+        "type",
+        "value",
+        "original_values",
+        "evidence_ids",
+        "report_ids"
+      ],
+      "title": "IOC",
+      "type": "object"
+    },
+    "Stage": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "passed",
+            "failed",
+            "skipped"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Detail"
+        }
+      },
+      "required": [
+        "name",
+        "status"
+      ],
+      "title": "Stage",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "report_id": {
+      "title": "Report Id",
+      "type": "string"
+    },
+    "ingestion_id": {
+      "title": "Ingestion Id",
+      "type": "string"
+    },
+    "ingested_at": {
+      "title": "Ingested At",
+      "type": "string"
+    },
+    "original_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Original Sha256",
+      "type": "string"
+    },
+    "source_sandbox": {
+      "title": "Source Sandbox",
+      "type": "string"
+    },
+    "sandbox_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sandbox Version"
+    },
+    "analysis_started_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Analysis Started At"
+    },
+    "analysis_ended_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Analysis Ended At"
+    },
+    "observations": {
+      "additionalProperties": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Observations",
+      "type": "object"
+    },
+    "parser_version": {
+      "default": "1.0",
+      "title": "Parser Version",
+      "type": "string"
+    },
+    "sample": {
+      "additionalProperties": true,
+      "title": "Sample",
+      "type": "object"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "iocs": {
+      "items": {
+        "$ref": "#/$defs/IOC"
+      },
+      "title": "Iocs",
+      "type": "array"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/Finding"
+      },
+      "title": "Findings",
+      "type": "array"
+    },
+    "attack": {
+      "items": {
+        "$ref": "#/$defs/AttackMapping"
+      },
+      "title": "Attack",
+      "type": "array"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    },
+    "stages": {
+      "items": {
+        "$ref": "#/$defs/Stage"
+      },
+      "title": "Stages",
+      "type": "array"
+    },
+    "correlations": {
+      "additionalProperties": {
+        "items": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "title": "Correlations",
+      "type": "object"
+    },
+    "ai": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ai"
+    }
+  },
+  "required": [
+    "report_id",
+    "ingestion_id",
+    "ingested_at",
+    "original_sha256",
+    "source_sandbox"
+  ],
+  "title": "Report",
+  "type": "object"
+}

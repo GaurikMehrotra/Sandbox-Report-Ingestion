@@ -1,0 +1,6 @@
+{
+  "info": {"version": "synthetic-cuckoo"},
+  "target": {"file": {"name": "second.exe", "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}},
+  "behavior": {"processes": [{"process_id": 200, "process_name": "second.exe"}], "summary": {"file_written": ["C:\\Temp\\second.txt"]}},
+  "network": {"dns": [{"domain": "example.org"}], "hosts": ["2001:db8::1"]}
+}
